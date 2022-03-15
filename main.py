@@ -333,11 +333,11 @@ def page1():
     names = []
     a=[]
     b=[]
-    for i in range(0,8):
+    for i in range(0,10):
         rag = time.time() - 86400 * i
         rag7 = datetime.datetime.fromtimestamp(rag).strftime('%Y-%m-%d')
         ha =datetime.datetime.now().strftime('%Y-%m-%d')
-        tweets = api.search_tweets(q=words,count=5000,until = rag7)
+        tweets = api.search_tweets(q=words,count=100,until = rag7)
         for res in tweets:
             text = res.text
             ida = res.id
@@ -395,7 +395,7 @@ def page1():
     """
     df2
     SUZI1 = len(df2)
-    st.write('取得ツイート数',SUZI1,'(最大800)')
+    st.write('取得ツイート数',SUZI1,'(最大900)')
     df2 = df2.drop_duplicates()
     df2
     SUZI2 = len(df2)
